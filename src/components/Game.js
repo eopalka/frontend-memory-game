@@ -1,10 +1,12 @@
 import React, { Component } from 'react'
 
-export class Game extends Component {
+class Game extends Component {
     render() {
+        const { timer, moves } =this.props;
         return (
             <div>
-                
+                <h3>{ timer }</h3>
+                <h3>{ moves }</h3>
             </div>
         )
     }
