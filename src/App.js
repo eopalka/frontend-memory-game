@@ -10,6 +10,7 @@ import Welcome from './components/Welcome';
 import ErrorPage from './components/Error';
 import Instructions from './components/Instructions';
 import Index from './components/Index'
+import Game from './components/Game'
 
 
 class App extends Component {
@@ -31,7 +32,8 @@ class App extends Component {
       <Switch>
         <Route exact path="/" component={ Welcome } />
         <Route exact path="/instructions" component={ Instructions } />
-        <Route exact path="/games" component={ Index } />
+        <Route exact path="/scoreboard" component={ Index } />
+        <Route exact path="/game" component={ Game } />
         <Route component={ErrorPage} />
       </Switch>
       <Footer />
