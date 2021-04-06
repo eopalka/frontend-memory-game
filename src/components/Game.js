@@ -4,11 +4,11 @@ import Card from './Card'
 class Game extends Component {
 
     render() {
-    const flippedCard = [];
+    // const flippedCard = [];
 
    
         return (
-            <div>
+            <div className= "gameboard">
                 <Card /> 
             </div>
         )
