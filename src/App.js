@@ -9,9 +9,8 @@ import Footer from './components/Footer';
 import Welcome from './components/Welcome';
 import ErrorPage from './components/Error';
 import Instructions from './components/Instructions';
-import Index from './components/Index'
-import Game from './components/Game'
-
+import Index from './components/Index';
+import Game from './components/Game';
 
 class App extends Component {
 
