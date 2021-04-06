@@ -7,12 +7,6 @@
   pointer-events: none;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
@@ -28,11 +22,53 @@
   color: #61dafb;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+
+.gameboard {
+  display: flex;
+  height: 85vh;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  display: flex;
+  height: 85vh;
+  justify-content: center;
+  align-items: center;
+}
+
+.images {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  height: 450px;
+  width: 570px;
+  box-shadow: 4px 4px 10px gray;
+  justify-content: center;
+  align-items: center;
+}
+
+.image {
+  background-size: contain !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  height: 120px;
+  width: 120px;
+  border-radius: 5px;
+  box-shadow: 2px 2px 3px black;
+  padding: 10px;
+  margin: 10px;
+}
+
+.image-blank {
+  background: url("./components/Images/icon.png") !important;
+  background-size: contain !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  height: 120px;
+  width: 120px;
+  border-radius: 5px;
+  box-shadow: 2px 2px 3px black;
+  padding: 10px;
+  margin: 10px;
 }
