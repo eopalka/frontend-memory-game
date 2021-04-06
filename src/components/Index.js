@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux';
-import Game from './Game';
+import ScoreBoard from './ScoreBoard';
 
 class Index extends Component {
     render() {
-        const games = this.props.games.map( (game, i) => <Game key={i} timer={ game.timer } moves={ game.moves } /> )
+        const games = this.props.games.map( (game, i) => <ScoreBoard key={i} timer={ game.timer } moves={ game.moves } user={ game.username }/> )
         return (
             <div>
                 { games }
@@ -14,6 +14,7 @@ class Index extends Component {
 }
 
 const mapStateToProps = state => {
+    // console.log(state)
     return {
         games: state.games
     }
