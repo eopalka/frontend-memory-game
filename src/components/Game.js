@@ -1,15 +1,15 @@
 import React, { Component } from 'react'
-import Card from './Card/Card'
+import Card from './Card'
 
 class Game extends Component {
+
     render() {
-        const { timer, moves } =this.props;
+    const flippedCard = [];
+
+   
         return (
             <div>
-                <h3>{ timer }</h3>
-                <h3>{ moves }</h3>
-                <Card />
-                
+                <Card /> 
             </div>
         )
     }
