@@ -16,6 +16,11 @@ const gamesReducer = (state=initialState, action) => {
                 loading: false,
                 games: action.games
             }
+        case "ADD_GAME":
+            return {
+                ...state,
+                games: [...state.games, action.game]
+      }
         default:
             return state;
     }

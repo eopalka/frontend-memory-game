@@ -21,7 +21,7 @@ class Form extends Component {
     render() {
         return (
             <div>
-                <h3>Who is You?</h3>
+                <h3>Who is You?</h3><br></br>
                 <form onSubmit={ this.handleSubmit }>
                     <input type="text" id="username" name="username" value={ this.state.username } onChange={ this.handleChange } />
                     <input type="submit" value="Enter" />
