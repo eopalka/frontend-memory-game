@@ -38,7 +38,8 @@ class Card extends Component {
           if (images.length < 1) {
             this.props.gameOver(true)
             let restart = document.getElementsByClassName("image")
-            for (let i = 0; i, restart.length; i++) {
+            for (let i = 0; i < restart.length; i++) {
+              console.log(restart[i])
               restart[i].classList.add("image-blank")
               restart[i].setAttribute("check", "false")
               this.cards = []

@@ -10,10 +10,9 @@ import Welcome from './components/Welcome';
 import ErrorPage from './components/Error';
 import Instructions from './components/Instructions';
 import Index from './components/Index';
-import Game from './components/Game';
+import WholeGame from './components/WholeGame';
 
 class App extends Component {
-
   componentDidMount() {
     this.props.getGames();
   }
@@ -32,7 +31,7 @@ class App extends Component {
         <Route exact path="/" component={ Welcome } />
         <Route exact path="/instructions" component={ Instructions } />
         <Route exact path="/scoreboard" component={ Index } />
-        <Route exact path="/game" component={ Game } />
+        <Route exact path="/game" component={ WholeGame } />
         <Route component={ErrorPage} />
       </Switch>
       <Footer />
