@@ -7,8 +7,9 @@ import thunk from 'redux-thunk';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import gamesReducer from './reducers/gamesReducer';
+import { composeWithDevTools } from "redux-devtools-extension";
 
-const store = createStore(gamesReducer, applyMiddleware(thunk))
+const store = createStore(gamesReducer, composeWithDevTools(applyMiddleware(thunk)))
 
 ReactDOM.render(
   <React.StrictMode>
