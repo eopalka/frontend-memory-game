@@ -1,5 +1,6 @@
 const initialState = {
     games: [],
+    user: null,
     loading: true
 }
 
@@ -20,7 +21,18 @@ const gamesReducer = (state=initialState, action) => {
             return {
                 ...state,
                 games: [...state.games, action.game]
-      }
+            }
+        case "CREATE_USER":
+            console.log(action.payload)
+            return {
+                ...state,
+                user: action.payload
+            }
+        case "UPDATE_GAMES_PLAYED":
+            return {
+                ...state,
+                user: {...state.user, games_played: action.payload + 1}
+            }
         default:
             return state;
     }
