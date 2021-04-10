@@ -1,38 +1,52 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux';
 import GameOver from './GameOver'
 import Game from './Game'
-import Login from './Login'
+import Header from './Header'
+import { updateGamesPlayed } from '../actions'
 
-export class WholeGame extends Component {
+class WholeGame extends Component {
+  
+  state = {
+    user: {
+      games_played: this.props.user.games_played,
+      username: this.props.user.username,
+      id: this.props.user.id
+    },
+    showGameOver: false
+  }
+  
+  handleModal = (boolean) => {
+    this.setState({ showGameOver: boolean})
+  }
+  
+  handleGameOver = (boolean) => {
+    if (boolean) {
+      this.setState({ showGameOver: boolean, games_played: this.props.user.games_played });
+      this.props.updateGamesPlayed(this.state.user.games_played)
+    } else {
+      this.setState({ showGameOver: boolean });
+    }
+  };
+  
+  render() {
 
-    state = {
-        showGameOver: false,
-        showLogin :true,
-      }
-    
-      handleGameOver = (boolean) => {
-        if (boolean) {
-          this.setState({ showGaveOver: boolean, score: this.state.score + 1 });
-        } else {
-          this.setState({ showGameOver: boolean });
-        }
-      };
-
-      handleLogin = (username, boolean) => {
-          this.setState({username: username, showLogin: boolean })
-      }
-
-
-    render() {
-        const { showGameOver, showLogin} = this.state
+      const { showGameOver } = this.state
+      const { user } = this.props
         return (
             <div>
-                {showGameOver ? <GameOver newGame={this.handleGameOver} /> : null}
-                {showLogin ? <Login username={this.handleLogin} history={this.props.history} /> : null}
+                {showGameOver ? <GameOver newGame={this.handleGameOver} handleModal={this.handleModal} /> : null}
+                < Header username={user.username} games_played={user.games_played} />
                 < Game gameOver={this.handleGameOver} />
             </div>
         )
     }
 }
 
-export default WholeGame
+const mapStateToProps = state => {
+  return {
+      user: state.user
+  }
+}
+
+export default connect(mapStateToProps, {updateGamesPlayed})(WholeGame)
