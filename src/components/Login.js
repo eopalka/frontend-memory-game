@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux';
-import { addGame } from "../actions";
+import { addUser } from "../actions";
 
 class Login extends Component {
     state = {
-        user_attributes: ""
+        username: "",
     }
 
     handleChange = e => {
@@ -12,10 +12,12 @@ class Login extends Component {
           [e.target.name]: e.target.value 
         })
     }
+    
     handleSubmit = e => {
-      e.preventDefault();
-      this.props.addGame(this.state, this.props.history);
+      e.preventDefault()
+      this.props.addUser(this.state);
     }
+
 
     render() {
       return (
@@ -23,7 +25,7 @@ class Login extends Component {
             <h3>Who is You?</h3>
             <br></br>
                 <form onSubmit={ this.handleSubmit }>
-                    <input type="text" id="username" name="user_attributes" value={ this.state.user_attributes } onChange={ this.handleChange } />
+                    <input type="text" id="username" name="username" value={ this.state.username } onChange={ this.handleChange } />
                     <input type="submit" value="Enter" />
                 </form>
           </div>
@@ -31,4 +33,4 @@ class Login extends Component {
     }
   }
 
-  export default connect(null, { addGame })(Login)
+  export default connect(null, {addUser}) (Login)
