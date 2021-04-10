@@ -4,7 +4,7 @@ export class Welcome extends Component {
     render() {
         return (
             <div className="App">
-                <h1>Hello Bitches</h1>
+                <h1>Time to test your memeory.</h1>
             </div>
         )
     }
