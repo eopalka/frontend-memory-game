@@ -11,7 +11,11 @@ import ErrorPage from './components/Error';
 import Instructions from './components/Instructions';
 import Index from './components/Index';
 import WholeGame from './components/WholeGame';
+import Login from './components/Login';
+import history from './history'
 
+
+// DOMContentLoaded
 class App extends Component {
   componentDidMount() {
     this.props.getGames();
@@ -24,8 +28,14 @@ class App extends Component {
       )
     }
 
+    if (!this.props.user) {
+      return (
+        <Login />
+      )
+    }
+
   return (
-    <Router>
+    <Router history={ history }>
       <Navbar />
       <Switch>
         <Route exact path="/" component={ Welcome } />
@@ -42,7 +52,8 @@ class App extends Component {
 
 const mapStateToProps = state => {
   return {
-    loading: state.loading
+    loading: state.loading,
+    user: state.user
   }
 }
 
