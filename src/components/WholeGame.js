@@ -6,41 +6,70 @@ import Header from './Header'
 import { updateGamesPlayed } from '../actions'
 
 class WholeGame extends Component {
-  
   state = {
     user: {
       games_played: this.props.user.games_played,
       username: this.props.user.username,
-      id: this.props.user.id
+      id: this.props.user.id,
     },
-    showGameOver: false
-  }
-  
+    game: {
+      moves: 0,
+    },
+    showGameOver: false,
+  };
+
   handleModal = (boolean) => {
-    this.setState({ showGameOver: boolean})
-  }
-  
+    this.setState({ showGameOver: boolean });
+  };
+
   handleGameOver = (boolean) => {
     if (boolean) {
-      this.setState({ showGameOver: boolean, games_played: this.props.user.games_played });
-      this.props.updateGamesPlayed(this.state.user.games_played)
+      this.setState({
+        showGameOver: boolean,
+        games_played: this.props.user.games_played,
+      });
+      this.props.updateGamesPlayed(this.state.user.games_played);
     } else {
       this.setState({ showGameOver: boolean });
     }
   };
-  
-  render() {
 
-      const { showGameOver } = this.state
-      const { user } = this.props
-        return (
-            <div>
-                {showGameOver ? <GameOver newGame={this.handleGameOver} handleModal={this.handleModal} /> : null}
-                < Header username={user.username} games_played={user.games_played} />
-                < Game gameOver={this.handleGameOver} />
-            </div>
-        )
-    }
+  handleResetMoves = () => {
+    this.setState({ game: { moves: 0 } });
+  };
+
+  handleMoveCount = (currentMove) => {
+    this.setState({
+      game: {
+        moves: currentMove,
+      },
+    });
+  };
+
+  render() {
+    const { showGameOver } = this.state;
+    const { user } = this.props;
+    return (
+      <div>
+        {showGameOver && (
+          <GameOver
+            newGame={this.handleGameOver}
+            handleModal={this.handleModal}
+            handleResetMoves={this.handleResetMoves}
+            moves={this.state.game.moves}
+          />
+        )}
+        <Header username={user.username} games_played={user.games_played} />
+        <h1>Moves:{this.state.game.moves}</h1>
+        <Game
+          handleGameOver={this.handleGameOver}
+          showGameOver={this.state.showGameOver}
+          handleMoveCount={this.handleMoveCount}
+          moves={this.state.game.moves}
+        />
+      </div>
+    );
+  }
 }
 
 const mapStateToProps = state => {

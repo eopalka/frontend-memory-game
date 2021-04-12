@@ -4,7 +4,23 @@ import { images } from "./Images/index"
 class Card extends Component {
         // array for cards to go into
         cards = [];
+
+        state = {
+          moves: 1
+        }
+
+      // Preventing the re-render so it will not sort mid game
+      shouldComponentUpdate() {
+        if (!this.props.showGameOver) {
+          return false
+        }
+        return true
+      }
+
         handleClick = (e) => {
+          console.log(this.state.moves)
+          this.setState({moves: this.state.moves + 1})
+          this.props.handleMoveCount(this.state.moves )
           let card = e.target;
           if (card.getAttribute("check") === "found") {
             return
@@ -36,7 +52,7 @@ class Card extends Component {
           // no cards left them the game is over
           let images = document.getElementsByClassName("image-blank")
           if (images.length < 1) {
-            this.props.gameOver(true)
+            this.props.handleGameOver(true)
             let restart = document.getElementsByClassName("image")
             for (let i = 0; i < restart.length; i++) {
               console.log(restart[i])
@@ -70,6 +86,8 @@ class Card extends Component {
             target.classList.remove("image-blank")
           }
         }
+
+        
 
 
         render() {

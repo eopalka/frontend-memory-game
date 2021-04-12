@@ -7,17 +7,20 @@ class GameOver extends Component {
 
     state = {
         user_id: this.props.user.id,
-        timer: "",
-        moves: "",
+        // timer: this.props.timer,
+        moves: this.props.moves,
         user_attributes: this.props.user
+        
     }
 
       handleSubmit = e => {
-        this.props.addGame(this.state, history);
+        debugger
+        console.log(this.props.addGame)
+        this.props.addGame(this.state, history)
         this.props.handleModal(false)
+        this.props.handleResetMoves()
       }
 
- 
         render() {
         return (
             <div className="game-over">
@@ -29,7 +32,7 @@ class GameOver extends Component {
 
 const mapStateToProps = state => {
     return {
-        user: state.user
+        user: state.user,
     }
   }
 

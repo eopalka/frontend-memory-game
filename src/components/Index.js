@@ -4,7 +4,7 @@ import ScoreBoard from './ScoreBoard';
 
 class Index extends Component {
     render() {
-        const games = this.props.games.map( (game, i) => <ScoreBoard key={i} timer={ game.timer } moves={ game.moves } user={ game.username }/> )
+        const games = this.props.games.map( (game, i) => <ScoreBoard key={i} timer={ game.timer } moves={ game.moves } username={ game.user.username } games_played={ game.user.games_played}/> )
         return (
             <div>
                 { games }
@@ -14,9 +14,9 @@ class Index extends Component {
 }
 
 const mapStateToProps = state => {
-    // console.log(state)
     return {
-        games: state.games
+        games: state.games,
+        user: state.user
     }
 }
 

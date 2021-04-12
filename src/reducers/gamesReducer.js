@@ -23,7 +23,6 @@ const gamesReducer = (state=initialState, action) => {
                 games: [...state.games, action.game]
             }
         case "CREATE_USER":
-            console.log(action.payload)
             return {
                 ...state,
                 user: action.payload
