@@ -24,7 +24,7 @@ export const addGame = (game, history) => {
         .then(resp => resp.json())
         .then(game => {
           dispatch({ type: "ADD_GAME", game })
-          history.push("/game")
+          history.push("/scoreboard")
         })
     }
   }

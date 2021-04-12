@@ -2,19 +2,18 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { addGame } from "../actions";
 import  history  from "../history"
+import { Link } from 'react-router-dom';
 
 class GameOver extends Component {
 
     state = {
         user_id: this.props.user.id,
-        // timer: this.props.timer,
         moves: this.props.moves,
         user_attributes: this.props.user
         
     }
 
       handleSubmit = e => {
-        debugger
         console.log(this.props.addGame)
         this.props.addGame(this.state, history)
         this.props.handleModal(false)
@@ -24,7 +23,7 @@ class GameOver extends Component {
         render() {
         return (
             <div className="game-over">
-                <button className="btn btn-primary" onClick={this.handleSubmit}>Good Job!</button>    
+                <Link to="/scoreboard"><button className="btn btn-primary" onClick={this.handleSubmit}>Good Job!</button></Link>    
             </div>
         )
     }
