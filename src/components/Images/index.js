@@ -1,6 +1,7 @@
 import Henry from "./henry.jpg"
 import Walnut from "./walnut.PNG"
 import Bandit from "./bandit.jpg"
+import bbhenry from "./bbhenry.jpg"
 import Icon from "./icon.png"
 
 
@@ -20,6 +21,10 @@ export let images = [
     },
 
     {
+        name: "bbhenry", pic: bbhenry, flipped: false
+    },
+
+    {
         name: "Henry", pic: Henry, flipped: false
     },
 
@@ -30,6 +35,11 @@ export let images = [
     {
         name: "Bandit", pic: Bandit, flipped: false
     },
+
+    {
+        name: "bbhenry", pic: bbhenry, flipped: false
+    },
+
 
 ]
 
