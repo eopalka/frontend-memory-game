@@ -3,8 +3,8 @@ import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { createStore, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
-// import './index.css';
 import App from './App';
+import './App.css';
 import reportWebVitals from './reportWebVitals';
 import gamesReducer from './reducers/gamesReducer';
 import { composeWithDevTools } from "redux-devtools-extension";
@@ -14,7 +14,7 @@ const store = createStore(gamesReducer, composeWithDevTools(applyMiddleware(thun
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
-    <App />
+    <App className="app" />
     </Provider>
   </React.StrictMode>,
   document.getElementById('root')
