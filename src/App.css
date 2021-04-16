@@ -8,8 +8,7 @@
 }
 
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  background-color: #eb9533;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -17,11 +16,6 @@
   font-size: calc(10px + 2vmin);
   color: white;
 }
-
-.App-link {
-  color: #61dafb;
-}
-
 
 .gameboard {
   display: flex;
@@ -43,7 +37,6 @@
   flex-wrap: wrap;
   height: 450px;
   width: 570px;
-  box-shadow: 4px 4px 10px gray;
   justify-content: center;
   align-items: center;
 }
@@ -87,9 +80,7 @@
   display: block;
   justify-content: center;
   align-items: center;
-  height: 30vh;
   text-align: center;
-  box-shadow: 6px 6px 6px gray;
   background: white;
 }
 
