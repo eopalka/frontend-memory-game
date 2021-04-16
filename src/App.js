@@ -13,8 +13,6 @@ import Index from './components/Index';
 import WholeGame from './components/WholeGame';
 import Login from './components/Login';
 import history from './history'
-
-
 // DOMContentLoaded
 class App extends Component {
   componentDidMount() {
@@ -37,7 +35,7 @@ class App extends Component {
   return (
     <Router history={ history }>
       <Navbar />
-      <Switch>
+      <Switch> //allows for only one route to be rendered at a time
         <Route exact path="/" component={ Welcome } />
         <Route exact path="/instructions" component={ Instructions } />
         <Route exact path="/scoreboard" component={ Index } />

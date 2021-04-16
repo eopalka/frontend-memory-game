@@ -69,3 +69,13 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
 # frontend-memory-game
+
+https://github.com/eopalka/backend-memory-game
+
+
+Hex Colors for Logo in same order they are on the picture
+1.#eb9533
+2.#ee5339
+3.#ac2949
+4.#78264e
+5.#35242e
