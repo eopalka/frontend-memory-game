@@ -60,7 +60,7 @@ class WholeGame extends Component {
           />
         )}
         <Header username={user.username} games_played={user.games_played} />
-        <h1>Moves:{this.state.game.moves}</h1>
+        <div className="App-header">Moves:{this.state.game.moves}</div>
         <Game
           handleGameOver={this.handleGameOver}
           showGameOver={this.state.showGameOver}
