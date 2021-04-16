@@ -4,7 +4,7 @@ class Header extends Component {
     render() {
         const { username, games_played } =this.props
         return (
-            <div>
+            <div className="App-header">
                 <div className="username">Player: {username}</div>
                 <div className="games_played">Games Played: {games_played}</div>
                 
