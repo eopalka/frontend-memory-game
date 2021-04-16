@@ -28,6 +28,8 @@ class Login extends Component {
                     <input type="text" id="username" name="username" value={ this.state.username } onChange={ this.handleChange } />
                     <input type="submit" value="Enter" />
                 </form>
+                <br></br>
+                <br></br>
           </div>
       )
     }
