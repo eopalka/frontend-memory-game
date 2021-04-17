@@ -4,7 +4,7 @@ class Error extends Component {
     render() {
         return (
             <div>
-                Freaking No! Error
+                <h1>This page does not exsist, please try again.</h1>
             </div>
         )
     }

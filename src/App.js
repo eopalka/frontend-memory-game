@@ -10,7 +10,7 @@ import Welcome from './components/Welcome';
 import ErrorPage from './components/Error';
 import Instructions from './components/Instructions';
 import Index from './components/Index';
-import WholeGame from './components/WholeGame';
+import WholeGame from './components/game/WholeGame';
 import Login from './components/Login';
 import history from './history'
 // DOMContentLoaded

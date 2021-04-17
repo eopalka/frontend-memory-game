@@ -54,7 +54,7 @@
 }
 
 .image-blank {
-  background: url("./components/Images/icon.png") !important;
+  background: url("./components/game/Images/icon.png") !important;
   background-size: contain !important;
   background-repeat: no-repeat !important;
   background-position: center !important;

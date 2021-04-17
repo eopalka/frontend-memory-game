@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { addGame } from "../actions";
-import  history  from "../history"
+import { addGame } from "../../actions";
+import  history  from "../../history"
 import { Link } from 'react-router-dom';
 
 class GameOver extends Component {

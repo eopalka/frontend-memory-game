@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import GameOver from './GameOver'
 import Game from './Game'
 import Header from './Header'
-import { updateGamesPlayed } from '../actions'
+import { updateGamesPlayed } from '../../actions'
 
 class WholeGame extends Component {
   state = {
