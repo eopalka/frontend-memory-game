@@ -18,7 +18,6 @@
 }
 
 .gameboard {
-  display: flex;
   height: 85vh;
   justify-content: center;
   align-items: center;
@@ -36,7 +35,7 @@
   flex-direction: row;
   flex-wrap: wrap;
   height: 450px;
-  width: 570px;
+  width: initial;
   justify-content: center;
   align-items: center;
 }
