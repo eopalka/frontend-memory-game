@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { addGame } from "../../actions";
+import { getGames } from '../../actions';
 import  history  from "../../history"
 import { Link } from 'react-router-dom';
 
@@ -18,6 +19,7 @@ class GameOver extends Component {
         this.props.addGame(this.state, history)
         this.props.handleModal(false)
         this.props.handleResetMoves()
+        this.props.getGames()
       }
 
         render() {
@@ -35,4 +37,4 @@ const mapStateToProps = state => {
     }
   }
 
-export default connect(mapStateToProps, { addGame }) (GameOver)
+export default connect(mapStateToProps, { addGame, getGames }) (GameOver)
